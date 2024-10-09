@@ -107,3 +107,75 @@ This project involves the development of a comprehensive bank application featur
 
 ### Figure 5. Bank Application Transaction Page
 ![transaction](https://github.com/user-attachments/assets/9262a295-325c-4183-a4f5-187ece04f7d8)
+
+
+
+
+
+
+
+
+# Installation Instructions for Bank Application
+
+### Clone the Repository
+
+1. Open your terminal or command prompt.
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/shahfaizanramju/Bank-Application.git
+   ```
+3. Navigate to the project directory:
+   ```bash
+   cd Bank-Application
+   ```
+
+#### Set Up PostgreSQL Database
+
+1. Log in to your PostgreSQL server using:
+   ```bash
+   psql -U postgres
+   ```
+   (Replace `postgres` with your username if different.)
+
+2. Create a new database:
+   ```sql
+   CREATE DATABASE bank_application;
+   ```
+
+3. Exit the PostgreSQL prompt:
+   ```sql
+   \q
+   ```
+
+#### Configure Application Properties
+
+1. Open the `src/main/resources/application.properties` file in your project.
+2. Configure the database connection settings:
+   ```properties
+   spring.datasource.url=jdbc:postgresql://localhost:5432/bank_application
+   spring.datasource.username=your_username
+   spring.datasource.password=your_password
+   ```
+   Replace `your_username` and `your_password` with your PostgreSQL credentials.
+
+#### Build the Application
+
+1. In your terminal, ensure you're in the project root directory.
+2. Build the application using Maven:
+   ```bash
+   mvn clean install
+   ```
+
+#### Run the Application
+- Start the application
+   ```bash
+   mvn spring-boot:run
+   ```
+
+#### Access the Application
+- Open your web browser and navigate to `http://localhost:8080` to access the bank application.
+
+### Additional Notes
+
+- Make sure that PostgreSQL is running before starting the application.
+- If you encounter any issues, check the logs in the terminal for error messages that can help with troubleshooting.
