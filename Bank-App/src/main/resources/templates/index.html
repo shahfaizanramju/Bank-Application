@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Bank Index</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(to right, #000000, #ffd700);
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .navbar-custom {
+        background-color: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .navbar-custom a {
+        color: #ffffff !important;
+      }
+
+      .navbar-custom .navbar-brand {
+        font-weight: bold;
+      }
+
+      .hero-section {
+        max-width: 800px;
+        text-align: center;
+        margin-top: 100px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      .btn-custom {
+        background-color: #000000;
+        border: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .footer {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 15px 0;
+        font-size: 14px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .footer a {
+        color: #ffd700;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .footer a:hover {
+        color: #ffecb3;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <a class="navbar-brand" href="#">Bank Application</a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="hero-section">
+      <h2>Welcome to Your Trusted Bank</h2>
+      <p>Your financial partner for a better future.</p>
+      <a href="/register" class="btn btn-custom btn-dark">Get Started</a>
+      <p class="mt-3">
+        Already have an account?
+        <a href="/login" class="text-warning">Login here</a>
+      </p>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2024 Your Bank. All rights reserved.</p>
+      <p>
+        <a href="/privacy">Privacy Policy</a> |
+        <a href="/terms">Terms of Service</a>
+      </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

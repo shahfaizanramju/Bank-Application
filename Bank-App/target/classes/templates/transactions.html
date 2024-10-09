@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Bank Transaction</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(to right, #000000, #ffd700);
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .navbar-custom {
+        background-color: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .navbar-custom a {
+        color: #ffffff !important;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin-top: 80px;
+        text-align: center;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        font-weight: bold;
+        border: #ffffff;
+      }
+
+      .table-dark {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-top: 2px solid whitesmoke;
+      }
+
+      .table-striped td,
+      .table-striped th {
+        color: #ffffff;
+        font-weight: bold;
+        padding: 15px;
+        border-bottom: 1px solid #f8f7f2;
+      }
+
+      .text-success {
+        color: #28a745 !important;
+      }
+
+      .text-danger {
+        color: #dc3545 !important;
+      }
+
+      .custom-link {
+        padding: 2px;
+        color: #eeede8;
+      }
+
+      .custom-link:hover {
+        color: #e4e6ec;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <a class="navbar-brand"><strong>Bank Application</strong></a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/transactions">Transactions</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="/">Logout</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <h2 class="text-center text-white">Transaction History</h2>
+      <div class="table-responsive table-custom">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Transaction ID</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="transaction : ${transactions}">
+              <td th:text="${transaction.id}"></td>
+              <td th:text="${transaction.type}"></td>
+              <td
+                th:text="${transaction.type == 'Deposit' ? '+' : '-'} + ${transaction.amount}"
+                th:classappend="${transaction.type == 'Deposit' ? 'text-light' : 'text-dark'}"
+              ></td>
+              <td th:text="${transaction.timestamp}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-center">
+        <a href="/dashboard" class="custom-link">Back to Dashboard</a>
+      </p>
+    </div>
+  </body>
+</html>
